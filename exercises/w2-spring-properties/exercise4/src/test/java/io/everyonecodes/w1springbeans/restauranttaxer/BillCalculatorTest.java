@@ -1,0 +1,50 @@
+package io.everyonecodes.w1springbeans.restauranttaxer;
+
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.Arguments;
+import org.junit.jupiter.params.provider.MethodSource;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+
+import java.util.List;
+import java.util.stream.Stream;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+@SpringBootTest
+public class BillCalculatorTest {
+    @Autowired
+    BillCalculator calculator;
+
+    static Stream<Arguments> parameters() {
+        return Stream.of(
+                Arguments.of(0.0, List.of()),
+                Arguments.of(1.0, List.of(new RestaurantDish("test", 1.0))),
+                Arguments.of(1.1, List.of(new RestaurantDish("tiramisu", 1.0))),
+                Arguments.of(1.2, List.of(new RestaurantDish("milkshake", 1.0))),
+                Arguments.of(2.3, List.of(
+                        new RestaurantDish("tiramisu", 1.0),
+                        new RestaurantDish("milkshake", 1.0))),
+                Arguments.of(3.3, List.of(
+                        new RestaurantDish("tiramisu", 1.0),
+                        new RestaurantDish("milkshake", 1.0),
+                        new RestaurantDish("test", 1.0)))
+        );
+    }
+
+    @ParameterizedTest
+    @MethodSource("parameters")
+    void calculate(double expected, List<RestaurantDish> dishes) {
+        double result = calculator.calculate2(dishes);
+        System.out.println(result);
+        assertEquals(expected, result);
+    }
+
+    @Test
+    void calculate2() {
+        double result = calculator.calculate(List.of(new RestaurantDish("test", 1.0)));
+
+        System.out.println(result);
+    }
+}
