@@ -1,8 +1,5 @@
-package io.everyonecodes.w1springbeans.amazinghelloworld;
+package io.everyonecodes.w1springbeans.amazinggoodbyeworld;
 
-import io.everyonecodes.w1springbeans.amazinggoodbyeworld.AmazingGoodbyeWorld;
-import io.everyonecodes.w1springbeans.amazinggoodbyeworld.Goodbye;
-import io.everyonecodes.w1springbeans.amazinggoodbyeworld.World;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
