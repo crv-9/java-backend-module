@@ -1,6 +1,4 @@
-package io.everyonecodes.w1springbeans.advancedtypes.CommunityEvent;
-
-import io.everyonecodes.w1springbeans.advancedtypes.Student.Student;
+package io.everyonecodes.w1springbeans.advancedtypes;
 
 import java.util.Set;
 
@@ -8,6 +6,9 @@ public class CommunityEvent {
     String name;
     String location;
     Set<Student> students;
+
+    public CommunityEvent() {
+    }
 
     public CommunityEvent(String name, String location, Set<Student> students) {
         this.name = name;

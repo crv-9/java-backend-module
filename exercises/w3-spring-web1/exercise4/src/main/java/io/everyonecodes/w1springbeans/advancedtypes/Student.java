@@ -1,10 +1,14 @@
-package io.everyonecodes.w1springbeans.advancedtypes.Student;
+package io.everyonecodes.w1springbeans.advancedtypes;
 
+import java.util.List;
 import java.util.Set;
 
 public class Student {
     String name;
     Set<String> languages;
+
+    public Student() {
+    }
 
     public Student(String name, Set<String> languages) {
         this.name = name;

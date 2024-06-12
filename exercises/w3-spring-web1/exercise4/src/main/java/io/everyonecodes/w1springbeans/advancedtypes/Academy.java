@@ -1,8 +1,11 @@
-package io.everyonecodes.w1springbeans.advancedtypes.Academy;
+package io.everyonecodes.w1springbeans.advancedtypes;
 
 public class Academy {
     String name;
     String location;
+
+    public Academy() {
+    }
 
     public Academy(String name, String location) {
         this.name = name;
