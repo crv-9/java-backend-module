@@ -1,0 +1,14 @@
+music:
+  songs:
+    - name: Windowscene
+      genre: Electronic
+    - name: The World Is Mine
+      genre: Electronic
+    - name: Si Un Jour
+      genre: Psychedelic
+    - name: Tomorrow Never Knows
+      genre: Psychedelic
+    - name: Chan Chan
+      genre: Son
+server:
+  port: 8080
