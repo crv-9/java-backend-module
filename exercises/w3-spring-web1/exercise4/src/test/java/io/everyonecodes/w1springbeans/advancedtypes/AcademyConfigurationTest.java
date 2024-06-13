@@ -1,5 +1,7 @@
 package io.everyonecodes.w1springbeans.advancedtypes;
 
+import io.everyonecodes.w1springbeans.advancedtypes.config.AcademyConfiguration;
+import io.everyonecodes.w1springbeans.advancedtypes.model.Academy;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
