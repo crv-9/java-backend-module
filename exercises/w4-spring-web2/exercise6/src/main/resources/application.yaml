@@ -1,0 +1,11 @@
+server:
+  port: 8501
+marathon:
+  runners:
+    - name: John
+      duration: PT1H40M34S
+    - name: Jane
+      duration: PT1H20M20S
+    - name: Jack
+      duration: PT1H10M10S
+  winner: Jack

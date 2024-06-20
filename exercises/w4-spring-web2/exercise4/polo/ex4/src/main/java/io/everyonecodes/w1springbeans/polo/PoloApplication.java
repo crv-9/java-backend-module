@@ -1,13 +1,13 @@
-package io.everyonecodes.w1springbeans.interactions;
+package io.everyonecodes.w1springbeans.polo;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class Exercise8Application {
+public class PoloApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(Exercise8Application.class, args);
+        SpringApplication.run(PoloApplication.class, args);
     }
 
 }
