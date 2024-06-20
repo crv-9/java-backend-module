@@ -9,6 +9,8 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.web.client.RestTemplate;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.NONE)
 public class PoloClientTest {
 
@@ -17,14 +19,18 @@ public class PoloClientTest {
 
     @MockBean
     RestTemplate restTemplate;
-    String url = "http://localhost:8080/polo/";
 
-//    @Test
-//    void poloClient() {
-//        Mockito.when(poloClient.forwardToPolo("Marco")).thenReturn("Polo");
-//
-//        Mockito.verify(restTemplate);
-//    }
+
+    @Test
+    void poloClient() {
+        String url = "http://localhost:9001/polo/";
+        String message = "Marco";
+        Mockito.when(restTemplate.postForObject(url,message, String.class)).thenReturn("Polo");
+        String response = poloClient.forwardToPolo(message);
+        Mockito.verify(restTemplate).postForObject(url,message, String.class);
+
+        assertEquals("Polo", response);
+    }
 
 
 

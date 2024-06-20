@@ -21,13 +21,13 @@ public class FormulaClientTest {
 
     @Test
     void formulaClient() {
-        Mockito.when(formulaClient.sendAndCalculateNumber("3")).thenReturn(6);
+        String url = "http://localhost:8080/formula";
+        String num = "3";
+        Mockito.when(restTemplate.postForObject(url, num, Integer.class)).thenReturn(6);
+        int response = formulaClient.sendAndCalculateNumber(num);
+        Mockito.verify(restTemplate).postForObject(url, num, Integer.class);
 
-        System.out.println( formulaClient.sendAndCalculateNumber("3"));
-
-//        assertEquals(6,result);
-
-        Mockito.verify(restTemplate);
+        assertEquals("6", String.valueOf(response));
 
     }
 }

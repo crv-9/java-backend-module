@@ -9,10 +9,10 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>io.everyonecodes.w1-spring-beans</groupId>
-    <artifactId>complex-formula</artifactId>
+    <artifactId>marathon-integration</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>exercise5</name>
-    <description>exercise5</description>
+    <name>exercise6</name>
+    <description>exercise6</description>
     <url/>
     <licenses>
         <license/>
@@ -45,12 +45,6 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>io.everyonecodes.w1-spring-beans</groupId>
-            <artifactId>marathon-integration</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-            <scope>compile</scope>
         </dependency>
     </dependencies>
 
