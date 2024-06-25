@@ -1,14 +1,12 @@
 package io.everyonecodes.w1springbeans.recommendations;
 
-import io.everyonecodes.w1springbeans.recommendations.clients.HotRightNowClient;
+
+import io.everyonecodes.w1springbeans.recommendations.clients.TailoredRecommendationsClient;
 import io.everyonecodes.w1springbeans.recommendations.model.Movie;
 import org.junit.jupiter.api.Test;
-import org.mockito.stubbing.Answer;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
-import org.springframework.test.context.ActiveProfiles;
 import org.springframework.web.client.RestTemplate;
 
 import java.util.List;
@@ -17,9 +15,9 @@ import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.NONE)
-public class HotRightNowClientTest {
+public class TailoredRecommendationsClientTest {
     @Autowired
-    HotRightNowClient hotRightNowClient;
+    TailoredRecommendationsClient tailoredRecommendationsClient;
 
     @Autowired
     List<Movie> movies;
@@ -27,16 +25,17 @@ public class HotRightNowClientTest {
     @MockBean
     RestTemplate restTemplate;
 
-    String url = "http://localhost:9002/movies";
+    String url123 = "http://localhost:9001/tailoredrecommendations/123abc";
 
 
     @Test
-    void getHotRightNowMovies(){
-        when(restTemplate.getForObject(url, Movie[].class))
+    void getRecommendations() {
+        when(restTemplate.getForObject(url123, Movie[].class))
                 .thenReturn(new Movie[]{});
 
-        hotRightNowClient.getHotRightNowMovies();
+        tailoredRecommendationsClient.getTailoredRecommendations("123abc");
 
-        verify(restTemplate).getForObject(url, Movie[].class);
+        verify(restTemplate).getForObject(url123, Movie[].class);
     }
+
 }

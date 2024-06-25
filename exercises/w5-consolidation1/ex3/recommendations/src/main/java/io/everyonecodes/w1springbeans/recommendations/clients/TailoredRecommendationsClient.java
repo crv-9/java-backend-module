@@ -7,6 +7,7 @@ import org.springframework.web.client.RestTemplate;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Stream;
 
 @Controller
 public class TailoredRecommendationsClient {
@@ -20,9 +21,8 @@ public class TailoredRecommendationsClient {
 
     public List<Movie> getTailoredRecommendations(String userUuid) {
         String newUrl = url + userUuid;
-        System.out.println(url);
-        System.out.println(newUrl);
+
         Movie[] moviesArray = restTemplate.getForObject(newUrl, Movie[].class);
-        return Arrays.asList(moviesArray);
+        return Stream.of(moviesArray).toList();
     }
 }

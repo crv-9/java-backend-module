@@ -11,8 +11,10 @@ import java.util.Set;
 @Service
 @ConfigurationProperties("store")
 public class MovieStore {
-
     private List<Movie> movies;
+
+
+    // why am I not using a bean? and why does it work?
 
     public void setMovies(List<Movie> movies) {
         this.movies = movies;

@@ -6,6 +6,7 @@ import org.springframework.web.client.RestTemplate;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Stream;
 
 @Controller
 public class HotRightNowClient {
@@ -17,11 +18,11 @@ public class HotRightNowClient {
     }
 
     // I want to get the list of Movies, but we can't receive a List<Object> as a normal class type
-    // we'll use the following instead
+    // we need to get an array of the objects
 
     public List<Movie> getHotRightNowMovies(){
         Movie[] moviesArray = restTemplate.getForObject(url, Movie[].class);
-        return Arrays.asList(moviesArray);
+        return Stream.of(moviesArray).toList();
     }
 
 

@@ -2,6 +2,7 @@ package io.everyonecodes.w1springbeans.recommendations;
 
 import io.everyonecodes.w1springbeans.recommendations.model.Movie;
 import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 import java.util.List;
@@ -11,7 +12,8 @@ import java.util.List;
 public class HotRightNowConfiguration {
     private List<Movie> movies;
 
-    public List<Movie> getMovies() {
+    @Bean
+    public List<Movie> movies() {
         return movies;
     }
 
