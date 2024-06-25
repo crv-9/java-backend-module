@@ -41,4 +41,12 @@ public class TailoredRecommendation {
     public int hashCode() {
         return Objects.hash(userUuid, movie);
     }
+
+    @Override
+    public String toString() {
+        return "TailoredRecommendation{" +
+                "userUuid='" + userUuid + '\'' +
+                ", movie=" + movie +
+                '}';
+    }
 }

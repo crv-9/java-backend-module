@@ -1,5 +1,6 @@
 package io.everyonecodes.w1springbeans.threepwoodcinema;
 
+import io.everyonecodes.w1springbeans.threepwoodcinema.logic.TemplateMessageFinder;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 import org.springframework.beans.factory.annotation.Autowired;

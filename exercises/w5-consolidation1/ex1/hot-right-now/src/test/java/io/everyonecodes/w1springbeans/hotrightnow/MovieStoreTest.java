@@ -18,7 +18,7 @@ import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
 @SpringBootTest
-@ActiveProfiles("test") //
+@ActiveProfiles("test") // was this even needed?
 // with @ActiveProfiles("test") I am telling Spring which yaml file to use.
 // make sure you name the yaml file correctly
 public class MovieStoreTest {

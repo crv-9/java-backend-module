@@ -1,14 +1,14 @@
-package io.everyonecodes.w1springbeans.threepwoodcinema;
+package io.everyonecodes.w1springbeans.threepwoodcinema.config;
 
+import io.everyonecodes.w1springbeans.threepwoodcinema.model.Template;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @Configuration
-@ConfigurationProperties("cinema.specialOffer")
+@ConfigurationProperties("cinema.special-offer")
 public class TemplateConfiguration {
     private List<Template> templates;
 

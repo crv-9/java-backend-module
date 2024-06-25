@@ -1,4 +1,4 @@
-package io.everyonecodes.w1springbeans.threepwoodcinema;
+package io.everyonecodes.w1springbeans.threepwoodcinema.logic;
 
 import org.springframework.stereotype.Service;
 
