@@ -1,0 +1,10 @@
+server:
+  port: 9000
+hot-store-test:
+  movies:
+    - title: The Matrix
+      synopsis: "Test1"
+    - title: Inception
+      synopsis: "test2"
+    - title: Interstellar
+      synopsis: "test3"

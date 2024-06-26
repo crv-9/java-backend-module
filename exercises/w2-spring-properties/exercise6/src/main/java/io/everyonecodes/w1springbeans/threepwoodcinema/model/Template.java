@@ -1,4 +1,4 @@
-package io.everyonecodes.w1springbeans.threepwoodcinema;
+package io.everyonecodes.w1springbeans.threepwoodcinema.model;
 
 public class Template {
     String name;

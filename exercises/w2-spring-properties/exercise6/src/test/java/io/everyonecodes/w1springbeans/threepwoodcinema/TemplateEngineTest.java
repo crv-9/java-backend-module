@@ -1,6 +1,6 @@
 package io.everyonecodes.w1springbeans.threepwoodcinema;
 
-import org.junit.jupiter.api.Test;
+import io.everyonecodes.w1springbeans.threepwoodcinema.logic.TemplateEngine;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 import org.springframework.beans.factory.annotation.Autowired;

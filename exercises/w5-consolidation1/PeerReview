@@ -1,0 +1,19 @@
+------------------
+PEER REVIEW W-4 - CONSOLIDATION
+------------------
+
+How we structured the code was very similar.
+
+-------
+Exercise 1
+- Sarah & Tara used quotes, and I used a ">" to use a block of text
+- Tara reads the test url from the yaml file
+
+-------
+Exercise 2
+- DirtiesContext clears the cache.
+-
+
+-------
+Exercise 3
+- Tara & Sarah use the clients within the same method. I used other methods
