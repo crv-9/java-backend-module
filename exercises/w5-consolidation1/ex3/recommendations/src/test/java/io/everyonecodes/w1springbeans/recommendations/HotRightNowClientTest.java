@@ -34,6 +34,7 @@ public class HotRightNowClientTest {
     void getHotRightNowMovies(){
         when(restTemplate.getForObject(url, Movie[].class))
                 .thenReturn(new Movie[]{});
+        // Here we are just testing it without a real value, we just care about the client being called
 
         hotRightNowClient.getHotRightNowMovies();
 

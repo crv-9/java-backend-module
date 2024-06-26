@@ -15,11 +15,11 @@ public class MovieStore {
 
 
     // why am I not using a bean? and why does it work?
-
     public void setMovies(List<Movie> movies) {
         this.movies = movies;
     }
 
+    // here I am including the constructor, but apparently it isn;t needed
     public MovieStore() {
         this.movies = getMovies();
     }
