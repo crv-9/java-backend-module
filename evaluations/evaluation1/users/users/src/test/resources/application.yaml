@@ -1,0 +1,14 @@
+store:
+  users:
+    - name: Lisa
+      email: lisa@email.com
+      account-type: standard account
+    - name: Rodolfo
+      email: rodolfo@email.com
+      account-type: standard account
+    - name: Samuel
+      email: samuel@email.com
+      account-type: premium account
+    - name: Rose
+      email: rose@email.com
+      account-type: premium account
