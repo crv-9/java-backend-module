@@ -1,0 +1,7 @@
+server:
+  port: 9000
+client:
+  url: http://localhost:9001/users
+
+cost: 2.50
+account: standard account
