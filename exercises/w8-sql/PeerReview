@@ -1,0 +1,21 @@
+Peer Review 25.07.2024
+With Sarah & Tara
+
+Ex. 2
+- We all have exactly the same code.
+
+Ex. 3
+- Tara uses:
+List<Contact> findContactsByAddressPostalCode(String postalCode);
+- Sarah used:
+@Query("SELECT c FROM Contact c WHERE c.address.postalCode = :postalCode")
+    List<Contact> findByPostalCode(String postalCode);
+
+and I used:
+List<Contact> findByAddressPostalCodeContaining(String postalCode);
+
+
+Ex. 4
+- exercise done in Live Coding
+
+
