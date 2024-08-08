@@ -1,0 +1,17 @@
+Last Peer Review
+
+DRIVERS
+- I have used extra features for checking if user is the same as the record to be read
+- Sarah checks if the user already exists before creating one
+
+- Tara only uses one method to check availability
+
+- Sarah created her own exception
+
+- Sarah uses a serialized way to create the users from the yaml file
+- Check credentials & SecurityConfig from DrHouse accountancy solution from security reflection
+
+RIDES
+- Instructions are ambiguous leading to several interpretations of task at hand
+
+- I need to separate into different endpoints depending on what I receive

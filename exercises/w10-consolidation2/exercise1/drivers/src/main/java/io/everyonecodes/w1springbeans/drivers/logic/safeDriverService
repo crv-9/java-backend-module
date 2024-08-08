@@ -1,0 +1,60 @@
+@Service
+public class DriverService {
+
+    private final DriverRepository driverRepository;
+    private final PasswordEncoder passwordEncoder;
+    private final String role;
+
+    public DriverService(DriverRepository driverRepository, PasswordEncoder passwordEncoder,
+                         @Value("${driver.role}") String role) {
+        this.driverRepository = driverRepository;
+        this.passwordEncoder = passwordEncoder;
+        this.role = role;
+    }
+
+    public Driver createDriver(Driver driver) {
+        driver.setAuthorities(Set.of(role));
+        // saving the password as encrypted
+        driver.setPassword(passwordEncoder.encode(driver.getPassword()));
+        driverRepository.save(driver);
+        return driver;
+    }
+
+    public Optional<Driver> getDriverByID(String id){
+        return driverRepository.findById(id);
+    }
+
+    public Driver updateDriverToAvailable(String id) {
+        Optional<Driver> oCurrentDriver = driverRepository.findById(id);
+        if (oCurrentDriver.isPresent()) {
+            Driver driver = oCurrentDriver.get();
+            driver.setAvailable(true);
+            return driverRepository.save(driver);
+        } else return null;
+    }
+
+    public Driver updateDriverToUnavailable(String id) {
+        Optional<Driver> oCurrentDriver = driverRepository.findById(id);
+        if (oCurrentDriver.isPresent()) {
+            Driver driver = oCurrentDriver.get();
+            driver.setAvailable(false);
+            return driverRepository.save(driver);
+        } else return null;
+    }
+
+    public List<Driver> getAllDrivers(){
+        return driverRepository.findAll();
+    }
+
+    public List<Driver> getAllAvailableDrivers(){
+        return driverRepository.findAllByIsAvailable(true);
+    }
+
+    public List<Driver> getAllUnavailableDrivers(){
+        return driverRepository.findAllByIsAvailable(false);
+    }
+
+    // [EXTRA] check if the current user is the owner of the entry
+    // in previous set up any user could view and/or change the status of someone else
+
+}
