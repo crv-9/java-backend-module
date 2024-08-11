@@ -22,6 +22,12 @@ public class Driver {
     public Driver() {
     }
 
+    public Driver(String username, String password, String carType) {
+        this.username = username;
+        this.password = password;
+        this.carType = carType;
+    }
+
     public Driver(String username, String password, String carType, boolean isAvailable) {
         this.username = username;
         this.password = password;

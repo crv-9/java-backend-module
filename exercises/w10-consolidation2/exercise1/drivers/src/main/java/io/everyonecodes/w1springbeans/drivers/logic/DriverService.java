@@ -29,12 +29,15 @@ public class DriverService {
 
     public Driver createDriver(Driver driver) {
         // TODO I need to check if Driver already exists
-
+        Optional<Driver> oDriver = findDriverByUsername(driver.getUsername());
+        if(oDriver.isPresent()) {
+            return oDriver.get();
+        } else {
         driver.setAuthorities(Set.of(driverRole));
         // saving the password as encrypted
         driver.setPassword(passwordEncoder.encode(driver.getPassword()));
         driverRepository.save(driver);
-        return driver;
+        return driver;}
     }
 
     public Optional<Driver> getDriverByID(String id){
@@ -74,6 +77,10 @@ public class DriverService {
             }
         }
         throw new AccessDeniedException("Access is denied");
+    }
+
+    public Optional<Driver> findDriverByUsername(String username) {
+        return driverRepository.findOneByUsername(username);
     }
 
     // [EXTRA]
